@@ -1,10 +1,12 @@
-// import { NodeTraverser } from "./day8/solution.js";
 const { NodeTraverser } = require("./day8/solution");
+const { main } = require("./day1/solution");
 
-const day8 = new NodeTraverser();
+// Day1
+main();
 
-// Part 1
-day8.traverseNodes();
-
-// Part 2
-day8.traverseMultipleNodes();
+// Day8
+// const day8 = new NodeTraverser();
+// // Part 1
+// day8.traverseNodes();
+// // Part 2
+// day8.traverseMultipleNodes();
