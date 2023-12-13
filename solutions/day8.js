@@ -17,7 +17,7 @@ const fs = require("fs");
  * - Track each of those paths until they all reach a node that ends in Z at the same time
  * - The step from above is the answer
  */
-class NodeTraverser {
+export class Day8 {
   static _keys = [];
   static _nodes = new Object();
   _startTime = 0;
@@ -151,5 +151,3 @@ class NodeTraverser {
     return res;
   };
 }
-
-module.exports = { NodeTraverser };

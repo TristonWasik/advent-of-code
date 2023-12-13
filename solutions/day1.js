@@ -1,4 +1,4 @@
-const fs = require("fs");
+import fs from "fs";
 
 let values = [];
 let debugArr = [];
@@ -6,7 +6,7 @@ let debugArr = [];
 /**
  * Read file, add calibration to array
  */
-readCalibration = async (debug = false) => {
+const readCalibration = async (debug = false) => {
   const contents = fs.readFileSync(__dirname + "/day1_input.txt", "utf-8");
 
   values = contents.split(/\r?\n/).map((line, i) => {
@@ -40,7 +40,7 @@ readCalibration = async (debug = false) => {
   console.log(`Parsed file, added ${values.length} calibrations.`);
 };
 
-convertToNumberString = (value) => {
+const convertToNumberString = (value) => {
   switch (value) {
     case "one":
       return "1";
@@ -67,11 +67,9 @@ convertToNumberString = (value) => {
   }
 };
 
-calculateTotal = (values) => values.reduce((a, b) => a + b);
+const calculateTotal = (values) => values.reduce((a, b) => a + b);
 
-main = () => {
+export const day1 = () => {
   readCalibration(true);
   console.log(calculateTotal(values));
 };
-
-module.exports = { main };

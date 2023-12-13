@@ -1,8 +1,11 @@
-const { NodeTraverser } = require("./day8/solution");
-const { main } = require("./day1/solution");
+import { day1 } from "./solutions/day1.js";
+import { day2 } from "./solutions/day2.js";
 
 // Day1
-main();
+// main();
+
+// Day 2
+day2();
 
 // Day8
 // const day8 = new NodeTraverser();
