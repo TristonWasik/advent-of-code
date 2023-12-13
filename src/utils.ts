@@ -6,9 +6,6 @@ import fs from "fs";
  * @param {*} splitCharacter
  */
 export const readFile = (filename: string, splitCharacter = /\r?\n/) => {
-  const file = fs.readFileSync(
-    "G:/dev/advent of code/solutions/" + filename,
-    "utf-8"
-  );
+  const file = fs.readFileSync(__dirname + "\\solutions\\" + filename, "utf-8");
   return file.split(splitCharacter);
 };

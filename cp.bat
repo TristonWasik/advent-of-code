@@ -1,0 +1,1 @@
+for /r ".\src\solutions" %%f in (*.txt) do xcopy /y "%%f" ".\dist\solutions"
