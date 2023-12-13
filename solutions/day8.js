@@ -31,7 +31,7 @@ class NodeTraverser {
    * Parse key file
    */
   readKey = async () => {
-    const file = fs.readFileSync(__dirname + "/key.txt", "utf-8");
+    const file = fs.readFileSync(__dirname + "/day8_key.txt", "utf-8");
     this._keys = file.split("");
     console.log(`Key parsed; Found ${this._keys.length} instructions;`);
   };
@@ -40,7 +40,7 @@ class NodeTraverser {
    * Read file, add nodes to master object
    */
   readNodes = async () => {
-    const contents = fs.readFileSync(__dirname + "/nodes.txt", "utf-8");
+    const contents = fs.readFileSync(__dirname + "/day8_nodes.txt", "utf-8");
 
     for (const line of contents.split(/\r?\n/)) {
       const [key, left, right] = line.match(/[A-Z]{3}/g);

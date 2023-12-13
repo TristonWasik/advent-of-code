@@ -7,7 +7,7 @@ let debugArr = [];
  * Read file, add calibration to array
  */
 readCalibration = async (debug = false) => {
-  const contents = fs.readFileSync(__dirname + "/calibration.txt", "utf-8");
+  const contents = fs.readFileSync(__dirname + "/day1_input.txt", "utf-8");
 
   values = contents.split(/\r?\n/).map((line, i) => {
     const numArr = line.match(
@@ -20,7 +20,7 @@ readCalibration = async (debug = false) => {
         convertToNumberString(numArr[0]) + convertToNumberString(numArr.at(-1))
       );
       debugArr.push(
-        `${i}:\t${line}\t[${numArr.toString().replaceAll(",", ".")}]\t\t\t${
+        `${i}: ${line} [${numArr.toString().replaceAll(",", ".")}] ${
           convertToNumberString(numArr[0]) +
           convertToNumberString(numArr.at(-1))
         }`
@@ -33,7 +33,7 @@ readCalibration = async (debug = false) => {
   });
 
   fs.writeFileSync(
-    __dirname + "/debug.txt",
+    __dirname + "/day1_debug.txt",
     debugArr.toString().replaceAll(",", "\n")
   );
 
