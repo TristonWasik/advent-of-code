@@ -1,7 +1,7 @@
 import { readFile } from "../utils";
 
 /**
- * Gets all adjacent items (not '.') in a 2d array
+ * Gets all adjacent special characters (not '.') in a 2d array
  * @param {string[][]} arr 2d array of strings
  * @param {number} x x pos of target item
  * @param {number} y y pos of target item
@@ -57,8 +57,10 @@ export const day3 = () => {
 
           // check for adjacent symbols
           const adjacent = getAdjacent(builtTable, rowIndex, columnIndex);
-          console.log(number, adjacent);
-          if (adjacent.length > 0) values.push(+number);
+          if (adjacent.length > 0) {
+            values.push(+number);
+            break;
+          }
         }
       });
     }
@@ -66,8 +68,7 @@ export const day3 = () => {
 
   console.log(
     "result",
-    values.reduce((a, b) => a + b, 0),
-    values
+    values.reduce((a, b) => a + b, 0)
   );
 };
 
