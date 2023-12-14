@@ -35,6 +35,7 @@ const getAdjacent = (arr: string[][], x: number, y: number) => {
 export const day3 = () => {
   const table = readFile("day3_input.txt");
   let values: number[] = [];
+  let tilesChecked = 0;
 
   // build the table contents
   let builtTable = table.map((row) => row.split(""));
@@ -55,10 +56,10 @@ export const day3 = () => {
           const columnIndex = table[rowIndex].indexOf(num, currentColumnIndex);
           currentColumnIndex = columnIndex > -1 ? columnIndex + 1 : 0;
 
-          // check for adjacent symbols
-          const adjacent = getAdjacent(builtTable, rowIndex, columnIndex);
-          if (adjacent.length > 0) {
+          // check for adjacent symbols and add this number to our result if they exist
+          if (getAdjacent(builtTable, rowIndex, columnIndex).length > 0) {
             values.push(+number);
+            tilesChecked += 8;
             break;
           }
         }
@@ -67,8 +68,12 @@ export const day3 = () => {
   });
 
   console.log(
-    "result",
-    values.reduce((a, b) => a + b, 0)
+    "result:",
+    values.reduce((a, b) => a + b, 0),
+    "total values found:",
+    values.length,
+    "adjacent tiles checked:",
+    tilesChecked
   );
 };
 
